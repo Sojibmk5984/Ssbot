@@ -1,1 +1,3 @@
-pyTelegramBotAPI
+msal
+requests
+python-telegram-bot
