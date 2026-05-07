@@ -115,15 +115,16 @@ def get_task(update, context):
 # --- ADMIN PANEL ---
 
 def admin_panel(update: Update, context):
+    # আমি এখান থেকে সব স্পেশাল ইমোজি সরিয়ে দিয়েছি যাতে এরর না আসে
     kb = [
         [
-            InlineKeyboardButton("🚫 BLOCK LIST", callback_data='block_list'), 
-            InlineKeyboardButton("❄️ Freeze Workers", callback_data='freeze_list')
+            InlineKeyboardButton("BLOCK LIST", callback_data='block_list'), 
+            InlineKeyboardButton("Freeze Workers", callback_data='freeze_list')
         ],
-        [InlineKeyboardButton("📋 User Details", callback_data='user_details')],
-        [InlineKeyboardButton("🏠 Home", callback_data='go_home')]
+        [InlineKeyboardButton("User Details", callback_data='user_details')],
+        [InlineKeyboardButton("Home", callback_data='go_home')]
     ]
-    update.callback_query.edit_message_text("💎 **ADMIN CONTROL PANEL**", reply_markup=InlineKeyboardMarkup(kb), parse_mode='Markdown')
+    update.callback_query.edit_message_text("--- ADMIN CONTROL PANEL ---", reply_markup=InlineKeyboardMarkup(kb))
 
 def main():
     updater = Updater(BOT_TOKEN, use_context=True)
